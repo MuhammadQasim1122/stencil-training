@@ -6,45 +6,47 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface AppHome {
+    interface AppForm {
     }
-    interface AppRoot {
+    interface ComInput {
+        "name": string;
     }
 }
 declare global {
-    interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
+    interface HTMLAppFormElement extends Components.AppForm, HTMLStencilElement {
     }
-    var HTMLAppHomeElement: {
-        prototype: HTMLAppHomeElement;
-        new (): HTMLAppHomeElement;
+    var HTMLAppFormElement: {
+        prototype: HTMLAppFormElement;
+        new (): HTMLAppFormElement;
     };
-    interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
+    interface HTMLComInputElement extends Components.ComInput, HTMLStencilElement {
     }
-    var HTMLAppRootElement: {
-        prototype: HTMLAppRootElement;
-        new (): HTMLAppRootElement;
+    var HTMLComInputElement: {
+        prototype: HTMLComInputElement;
+        new (): HTMLComInputElement;
     };
     interface HTMLElementTagNameMap {
-        "app-home": HTMLAppHomeElement;
-        "app-root": HTMLAppRootElement;
+        "app-form": HTMLAppFormElement;
+        "com-input": HTMLComInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface AppHome {
+    interface AppForm {
     }
-    interface AppRoot {
+    interface ComInput {
+        "name"?: string;
     }
     interface IntrinsicElements {
-        "app-home": AppHome;
-        "app-root": AppRoot;
+        "app-form": AppForm;
+        "com-input": ComInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
-            "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "app-form": LocalJSX.AppForm & JSXBase.HTMLAttributes<HTMLAppFormElement>;
+            "com-input": LocalJSX.ComInput & JSXBase.HTMLAttributes<HTMLComInputElement>;
         }
     }
 }
