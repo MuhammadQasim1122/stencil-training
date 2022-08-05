@@ -9,7 +9,10 @@ export namespace Components {
     interface AppForm {
     }
     interface ComInput {
+        "label": string;
         "name": string;
+        "onChangeValue": (e: MouseEvent) => void;
+        "type": string;
     }
 }
 declare global {
@@ -34,7 +37,10 @@ declare namespace LocalJSX {
     interface AppForm {
     }
     interface ComInput {
+        "label"?: string;
         "name"?: string;
+        "onChangeValue"?: (e: MouseEvent) => void;
+        "type"?: string;
     }
     interface IntrinsicElements {
         "app-form": AppForm;

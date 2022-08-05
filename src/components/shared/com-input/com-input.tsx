@@ -1,4 +1,4 @@
-import { Component,State, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'com-input',
@@ -6,25 +6,16 @@ import { Component,State, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class ComInput {
-  @Prop({mutable: true}) name : string;
-  @State() formControls = {
-    name: null
-  };
-  changeFormValue(controlName:string, value:any) {
-    console.log(controlName, value);
-    this.formControls = {
-      ...this.formControls,
-      [controlName]: value.value
-    };
-  }
+  @Prop() name : string;
+  @Prop() label : string;
+  @Prop() type : string;
+  @Prop() onChangeValue: (e: MouseEvent) => void;
   render() {
     return (
       <div>
-        <label>{this.name}</label>
+        <label>{this.label}</label>
           <input onInput={(e: any) =>
-            this.changeFormValue(this.name,
-              e.target)
-          } type='text'></input>
+            this.onChangeValue(e)} name = {this.name} type={this.type}></input>
       </div>
     );
   }

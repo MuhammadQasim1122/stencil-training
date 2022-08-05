@@ -1,4 +1,4 @@
-import { Component,State, h } from '@stencil/core';
+import { Component, h, State } from '@stencil/core';
 import Axios from 'axios';
 
 @Component({
@@ -9,8 +9,20 @@ import Axios from 'axios';
 
 export class AppForm {
   public url = "https://webhook.site/9a8f33d8-4412-49d5-8f43-44d3b97d4d13";
+  
   @State() formControls = {
-    name : null
+    firstName: null,
+    lastName: null,
+    age: null,
+    email: null,
+    file: null
+  };
+  changeFormValue(controlName:string, value:any) {
+    console.log(controlName, value);
+    this.formControls = {
+      ...this.formControls,
+      [controlName]: value.value
+    };
   }
   submitForm(e){
     console.log(this.formControls);
@@ -32,9 +44,11 @@ export class AppForm {
     return (
       <div class="app-home">
         <form onSubmit={(e)=>this.submitForm(e)}>
-          <com-input name = 'First Name'></com-input>
-          <com-input name = 'Last Name'></com-input>
-          <com-input name = 'age'></com-input>
+          <com-input onChangeValue = {(e) => this.changeFormValue('firstName',e.target)} name = "firstName" label='First Name' type='text'></com-input>
+          <com-input onChangeValue = {(e) => this.changeFormValue('lastName',e.target)} name = "lastName" label='Last Name' type='text'></com-input>
+          <com-input onChangeValue = {(e) => this.changeFormValue('age',e.target)} name = "age" label='Age' type='number'></com-input>
+          <com-input onChangeValue = {(e) => this.changeFormValue('email',e.target)} name = "email" label='Email' type='email'></com-input>
+          <com-input onChangeValue = {(e) => this.changeFormValue('file',e.target)} name = "file" label='Upload Image' type='file'></com-input>
           <input type='submit'></input>
         </form>
       </div>
