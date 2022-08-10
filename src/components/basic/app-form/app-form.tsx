@@ -18,7 +18,6 @@ export class AppForm {
     file: null
   };
   changeFormValue(controlName:string, value:any) {
-    console.log(controlName, value);
     this.formControls = {
       ...this.formControls,
       [controlName]: value.value
@@ -37,8 +36,7 @@ export class AppForm {
         if(res.status === 200 ){
           alert("Submitted Succesfully");
         }
-      })
-      
+      }) 
   }
   render() {
     return (
