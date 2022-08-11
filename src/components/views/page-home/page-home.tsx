@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'page-home',
-  styleUrl: 'page-home.css',
+  styleUrl: 'page-home.scss',
   shadow: true,
 })
 export class PageHome {

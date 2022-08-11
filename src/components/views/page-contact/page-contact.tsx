@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'page-contact',
-  styleUrl: 'page-contact.css',
+  styleUrl: 'page-contact.scss',
   shadow: true,
 })
 export class PageContact {

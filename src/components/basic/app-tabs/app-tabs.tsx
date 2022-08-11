@@ -2,7 +2,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'tabs-component',
-  styleUrl: 'app-tabs.css'
+  styleUrl: 'app-tabs.scss'
 })
 export class TabComponent {
   render() {
