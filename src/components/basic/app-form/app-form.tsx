@@ -41,7 +41,6 @@ export class AppForm {
   render() {
     return (
       <div>
-        
         <form onSubmit={(e)=>this.submitForm(e)}>
           <com-input onChangeValue = {(e) => this.changeFormValue('firstName',e.target)} name = "firstName" label='First Name' type='text'></com-input>
           <com-input onChangeValue = {(e) => this.changeFormValue('lastName',e.target)} name = "lastName" label='Last Name' type='text'></com-input>

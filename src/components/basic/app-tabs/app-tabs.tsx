@@ -24,16 +24,22 @@ export class TabComponent {
             <page-contact></page-contact>
           </ion-nav>
         </ion-tab>
+        <ion-tab tab="tab-form">
+          <ion-nav>
+            <app-form></app-form>
+          </ion-nav>
+        </ion-tab>
+
 
 
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="tab-home">
-            <ion-icon name="book-outline"></ion-icon>
+            <ion-icon name="home-outline"></ion-icon>
             <ion-label>Home</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="tab-about">
-            <ion-icon name="home-outline"></ion-icon>
+            <ion-icon name="information-circle-outline"></ion-icon>
             <ion-label>About</ion-label>
           </ion-tab-button>
 
@@ -41,7 +47,10 @@ export class TabComponent {
             <ion-icon name="person-add-outline"></ion-icon>
             <ion-label>Contact</ion-label>
           </ion-tab-button>
-
+          <ion-tab-button tab="tab-form">
+            <ion-icon name="document-outline"></ion-icon>
+            <ion-label>Form</ion-label>
+          </ion-tab-button>
         </ion-tab-bar>
 
       </ion-tabs>
