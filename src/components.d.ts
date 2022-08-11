@@ -14,6 +14,12 @@ export namespace Components {
         "onChangeValue": (e: MouseEvent) => void;
         "type": string;
     }
+    interface PageAbout {
+    }
+    interface PageContact {
+    }
+    interface PageHome {
+    }
 }
 declare global {
     interface HTMLAppFormElement extends Components.AppForm, HTMLStencilElement {
@@ -28,9 +34,30 @@ declare global {
         prototype: HTMLComInputElement;
         new (): HTMLComInputElement;
     };
+    interface HTMLPageAboutElement extends Components.PageAbout, HTMLStencilElement {
+    }
+    var HTMLPageAboutElement: {
+        prototype: HTMLPageAboutElement;
+        new (): HTMLPageAboutElement;
+    };
+    interface HTMLPageContactElement extends Components.PageContact, HTMLStencilElement {
+    }
+    var HTMLPageContactElement: {
+        prototype: HTMLPageContactElement;
+        new (): HTMLPageContactElement;
+    };
+    interface HTMLPageHomeElement extends Components.PageHome, HTMLStencilElement {
+    }
+    var HTMLPageHomeElement: {
+        prototype: HTMLPageHomeElement;
+        new (): HTMLPageHomeElement;
+    };
     interface HTMLElementTagNameMap {
         "app-form": HTMLAppFormElement;
         "com-input": HTMLComInputElement;
+        "page-about": HTMLPageAboutElement;
+        "page-contact": HTMLPageContactElement;
+        "page-home": HTMLPageHomeElement;
     }
 }
 declare namespace LocalJSX {
@@ -42,9 +69,18 @@ declare namespace LocalJSX {
         "onChangeValue"?: (e: MouseEvent) => void;
         "type"?: string;
     }
+    interface PageAbout {
+    }
+    interface PageContact {
+    }
+    interface PageHome {
+    }
     interface IntrinsicElements {
         "app-form": AppForm;
         "com-input": ComInput;
+        "page-about": PageAbout;
+        "page-contact": PageContact;
+        "page-home": PageHome;
     }
 }
 export { LocalJSX as JSX };
@@ -53,6 +89,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "app-form": LocalJSX.AppForm & JSXBase.HTMLAttributes<HTMLAppFormElement>;
             "com-input": LocalJSX.ComInput & JSXBase.HTMLAttributes<HTMLComInputElement>;
+            "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
+            "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
+            "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
         }
     }
 }
