@@ -31,7 +31,6 @@ export class TabComponent {
         </ion-tab>
 
 
-
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="tab-home">
             <ion-icon name="home-outline"></ion-icon>

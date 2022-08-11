@@ -6,10 +6,6 @@ export const config: Config = {
   globalStyle: 'src/global/app.scss',
   globalScript: 'src/global/app.ts',
   taskQueue: 'async',
-  bundles: [
-    { components: ['app-form']},
-    { components: ['page-home', 'page-about', 'page-contact'] }
-  ],
   outputTargets: [
     {
       type: 'www',

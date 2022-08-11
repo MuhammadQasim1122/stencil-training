@@ -13,9 +13,11 @@ export class ComInput {
   render() {
     return (
       <div>
-        <label>{this.label}</label>
-          <input onInput={(e: any) =>
-            this.onChangeValue(e)} name = {this.name} type={this.type}></input>
+        <ion-item>
+        <ion-label>{this.label}</ion-label>
+        <ion-input onInput={(e: any) =>
+            this.onChangeValue(e)} name = {this.name} type={this.type}></ion-input>
+      </ion-item>
       </div>
     );
   }
