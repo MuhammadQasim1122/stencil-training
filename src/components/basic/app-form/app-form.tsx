@@ -40,15 +40,8 @@ export class AppForm {
   }
   render() {
     return (
-      <div class="app-home">
-        <stencil-route-link url='/views/page-home' exact={true}>Home</stencil-route-link>
-        <stencil-route-link url='/views/page-about'>About Us</stencil-route-link>
-        <stencil-route-link url='/views/page-contact'>Contact</stencil-route-link>
-        <stencil-router id='main-router'>
-          <stencil-route url='/views/page-home' component='page-home'></stencil-route>
-          <stencil-route url='/views/page-about' component='page-about'></stencil-route>
-          <stencil-route url='/views/page-contact' component='page-contact'></stencil-route>
-        </stencil-router>
+      <div>
+        
         <form onSubmit={(e)=>this.submitForm(e)}>
           <com-input onChangeValue = {(e) => this.changeFormValue('firstName',e.target)} name = "firstName" label='First Name' type='text'></com-input>
           <com-input onChangeValue = {(e) => this.changeFormValue('lastName',e.target)} name = "lastName" label='Last Name' type='text'></com-input>

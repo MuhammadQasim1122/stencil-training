@@ -20,6 +20,8 @@ export namespace Components {
     }
     interface PageHome {
     }
+    interface TabsComponent {
+    }
 }
 declare global {
     interface HTMLAppFormElement extends Components.AppForm, HTMLStencilElement {
@@ -52,12 +54,19 @@ declare global {
         prototype: HTMLPageHomeElement;
         new (): HTMLPageHomeElement;
     };
+    interface HTMLTabsComponentElement extends Components.TabsComponent, HTMLStencilElement {
+    }
+    var HTMLTabsComponentElement: {
+        prototype: HTMLTabsComponentElement;
+        new (): HTMLTabsComponentElement;
+    };
     interface HTMLElementTagNameMap {
         "app-form": HTMLAppFormElement;
         "com-input": HTMLComInputElement;
         "page-about": HTMLPageAboutElement;
         "page-contact": HTMLPageContactElement;
         "page-home": HTMLPageHomeElement;
+        "tabs-component": HTMLTabsComponentElement;
     }
 }
 declare namespace LocalJSX {
@@ -75,12 +84,15 @@ declare namespace LocalJSX {
     }
     interface PageHome {
     }
+    interface TabsComponent {
+    }
     interface IntrinsicElements {
         "app-form": AppForm;
         "com-input": ComInput;
         "page-about": PageAbout;
         "page-contact": PageContact;
         "page-home": PageHome;
+        "tabs-component": TabsComponent;
     }
 }
 export { LocalJSX as JSX };
@@ -92,6 +104,7 @@ declare module "@stencil/core" {
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
             "page-home": LocalJSX.PageHome & JSXBase.HTMLAttributes<HTMLPageHomeElement>;
+            "tabs-component": LocalJSX.TabsComponent & JSXBase.HTMLAttributes<HTMLTabsComponentElement>;
         }
     }
 }
