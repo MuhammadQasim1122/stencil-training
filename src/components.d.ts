@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface AppForm {
     }
+    interface AppRedux {
+    }
     interface ComInput {
         "label": string;
         "name": string;
@@ -29,6 +31,12 @@ declare global {
     var HTMLAppFormElement: {
         prototype: HTMLAppFormElement;
         new (): HTMLAppFormElement;
+    };
+    interface HTMLAppReduxElement extends Components.AppRedux, HTMLStencilElement {
+    }
+    var HTMLAppReduxElement: {
+        prototype: HTMLAppReduxElement;
+        new (): HTMLAppReduxElement;
     };
     interface HTMLComInputElement extends Components.ComInput, HTMLStencilElement {
     }
@@ -62,6 +70,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "app-form": HTMLAppFormElement;
+        "app-redux": HTMLAppReduxElement;
         "com-input": HTMLComInputElement;
         "page-about": HTMLPageAboutElement;
         "page-contact": HTMLPageContactElement;
@@ -71,6 +80,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface AppForm {
+    }
+    interface AppRedux {
     }
     interface ComInput {
         "label"?: string;
@@ -88,6 +99,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "app-form": AppForm;
+        "app-redux": AppRedux;
         "com-input": ComInput;
         "page-about": PageAbout;
         "page-contact": PageContact;
@@ -100,6 +112,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "app-form": LocalJSX.AppForm & JSXBase.HTMLAttributes<HTMLAppFormElement>;
+            "app-redux": LocalJSX.AppRedux & JSXBase.HTMLAttributes<HTMLAppReduxElement>;
             "com-input": LocalJSX.ComInput & JSXBase.HTMLAttributes<HTMLComInputElement>;
             "page-about": LocalJSX.PageAbout & JSXBase.HTMLAttributes<HTMLPageAboutElement>;
             "page-contact": LocalJSX.PageContact & JSXBase.HTMLAttributes<HTMLPageContactElement>;
