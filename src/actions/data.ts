@@ -7,7 +7,7 @@ export function loadData() {
     // Trigger the LOAD_DATA_BEGIN action
     dispatch(loadDataBegin());
     try {
-      let response = await fetch('/assets/test-data.json');
+      let response = await fetch('./assets/test-data.json');
       handleErrors(response);
       let json: DataResponse = await response.json();
       // Trigger the LOAD_DATA_SUCCESS action
