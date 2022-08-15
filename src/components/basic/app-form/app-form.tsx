@@ -18,6 +18,7 @@ export class AppForm {
     file: null
   };
   changeFormValue(controlName:string, value:any) {
+    console.log(this.formControls);
     this.formControls = {
       ...this.formControls,
       [controlName]: value.value

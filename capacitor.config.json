@@ -1,0 +1,6 @@
+{
+  "appId": "com.example.app",
+  "appName": "stencil-training",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
