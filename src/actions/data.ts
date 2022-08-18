@@ -1,30 +1,21 @@
 import { Actions } from './index';
-interface DataResponse {
-  items: string[];
-}
+import API from '../assets/API';
 export function loadData() {
   return async (dispatch) => {
     // Trigger the LOAD_DATA_BEGIN action
     dispatch(loadDataBegin());
     try {
-      let response = await fetch('./assets/test-data.json');
-      handleErrors(response);
-      let json: DataResponse = await response.json();
+      const response: any = await API.post('./assets/test-data.json');
       // Trigger the LOAD_DATA_SUCCESS action
-      dispatch(loadDataSuccess(json.items));
-      return json.items;
+      dispatch(loadDataSuccess(response.items));
+      return response.items;
     } catch (error) {
       // Trigger the LOAD_DATA_FAILURE action
       dispatch(loadDataFailure(error));
     }
   };
 }
-function handleErrors(response) {
-  if (!response.ok) {
-    throw new Error(response.statusText);
-  }
-  return response;
-}
+
 // ACTIONS
 export interface LoadDataBeginAction {
   type: Actions.LOAD_DATA_BEGIN;
